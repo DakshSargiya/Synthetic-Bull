@@ -1,11 +1,6 @@
 # Synthetic-Bull
-
-> NextBull × IIT Kharagpur Open Soft 2026  
+ 
 > Full-Stack Exchange Simulator & Algorithmic Trading Terminal
-
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
-<!-- replace OWNER/REPO above once this is pushed to GitHub -->
-
 ---
 
 ## Quick Start
