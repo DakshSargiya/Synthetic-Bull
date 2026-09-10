@@ -1,0 +1,21 @@
+node_modules/
+dist/
+build/
+*.o
+*.a
+__pycache__/
+*.pyc
+.env
+
+# Backend build artifacts
+backend/deps/
+backend/synthetic-bull
+
+# Backend benchmark binary
+/tmp/latency_bench
+
+# Bots venv
+bots/.venv/
+
+# Per-run session logs (BENCHMARKS.md ships one reference session under docs/benchmarks/ instead)
+bots/logs/

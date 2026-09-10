@@ -1,0 +1,37 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "9001:9001"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # Bots are optional — start them with:  docker compose --profile bots up
+  market-maker:
+    build:
+      context: ./bots
+    command: ["python", "market_maker.py"]
+    environment:
+      WS_URL: ws://backend:9001
+    depends_on:
+      - backend
+    profiles: ["bots"]
+    restart: unless-stopped
+
+  alpha-bot:
+    build:
+      context: ./bots
+    command: ["python", "alpha_bot.py"]
+    environment:
+      WS_URL: ws://backend:9001
+    depends_on:
+      - backend
+    profiles: ["bots"]
+    restart: unless-stopped
